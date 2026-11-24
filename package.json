@@ -1,0 +1,10 @@
+{
+  "name": "nucleo-take-home",
+  "private": true,
+  "description": "case-001 CT viewer: one command starts the backend and the frontend",
+  "scripts": {
+    "dev": "npm --prefix frontend install --no-audit --no-fund && uv sync --project backend && npm --prefix frontend run dev:all",
+    "test": "cd backend && uv run pytest -q && cd ../frontend && npx vitest run",
+    "test:e2e": "npm --prefix frontend run test:e2e"
+  }
+}

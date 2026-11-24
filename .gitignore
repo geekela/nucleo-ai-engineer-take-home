@@ -1,0 +1,33 @@
+# secrets
+.env
+.env.*
+!.env.example
+
+# assignment data (medical images: only for this assignment, don't redistribute)
+data/
+*.nii
+*.nii.gz
+*.dcm
+*.zip
+
+# python
+.venv
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# node
+node_modules/
+dist/
+
+# misc
+.DS_Store
+.superpowers/
+
+# local-only: copy of the brief and personal notes
+instructions.md
+notes.md
+
+# end-to-end test output
+test-results/
+playwright-report/
