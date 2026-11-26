@@ -39,6 +39,12 @@ the backend. It never reaches the browser and is never logged; a log filter mask
 The local backend only accepts uploads from pages on this computer, so another website open in the same
 browser can't start uploads with your token.
 
+**Why there's a local server.** The brief says no backend needs to be built, meaning the segmentation
+service is provided. The app still runs a small local server, which this README calls the backend. The
+API sends no CORS headers, so a browser page can't call it directly, and the local server keeps the token
+out of the browser. It also does the DICOM and NIfTI parsing (pydicom, nibabel), the grid check and Dice,
+and the per-token rate limiting. Nothing is deployed; `npm run dev` starts it with the viewer.
+
 ## Using it
 
 - **Viewer:** scroll with the mouse wheel or trackpad, drag the slider, or press ↑/↓ (Page Up/Down moves
